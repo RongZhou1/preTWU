@@ -17,9 +17,9 @@ import main.java.Triangle;
  */
 public class TriangleTest {
 
-    private final ByteArrayOutputStream consoleLog = new ByteArrayOutputStream();
     //given
-    Triangle triangle = new Triangle();
+    private Triangle triangle = new Triangle();
+    private final ByteArrayOutputStream consoleLog = new ByteArrayOutputStream();
 
     @Before
     public void setUp() throws Exception {
@@ -36,7 +36,6 @@ public class TriangleTest {
         //when
         consoleLog.reset();
         triangle.printAsterisk();
-
         //then
         assertThat(consoleLog.toString(), is("*\n"));
     }
