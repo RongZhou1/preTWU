@@ -15,8 +15,7 @@ public class Diamond {
 
     public void drawDiamond(int n) {
         List<String> strList = buildIsoscelesTriangle(n);
-        for (String str :
-                strList) {
+        for (String str : strList) {
             System.out.print(str);
         }
         List<String> strList2 = buildInverseIsoscelesTriangle(n);
