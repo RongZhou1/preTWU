@@ -6,6 +6,36 @@ import java.util.List;
  */
 public class Diamond {
 
+    public void drawIsoscelesTriangle(int n) {
+        List<String> strList = buildIsoscelesTriangle(n);
+        for (String str : strList) {
+            System.out.print(str);
+        }
+    }
+
+    public void drawDiamond(int n) {
+        List<String> strList = buildIsoscelesTriangle(n);
+        for (String str :
+                strList) {
+            System.out.print(str);
+        }
+        List<String> strList2 = buildInverseIsoscelesTriangle(n);
+        for (int i = 1; i < strList2.size(); i++) {
+            System.out.print(strList2.get(i));
+        }
+    }
+
+    public void drawDiamondWithName(int n, String name) {
+        List<String> strList = buildIsoscelesTriangle(n);
+        for (int i = 0; i < strList.size() - 1; i++) {
+            System.out.print(strList.get(i));
+        }
+        System.out.println(name);
+        List<String> strList2 = buildInverseIsoscelesTriangle(n);
+        for (int i = 1; i < strList2.size(); i++) {
+            System.out.print(strList2.get(i));
+        }
+    }
 
     private String printAsterisk(int count) {
         StringBuilder str = new StringBuilder();
@@ -33,14 +63,6 @@ public class Diamond {
         return strList;
     }
 
-    public void drawIsoscelesTriangle(int n) {
-        List<String> strList = buildIsoscelesTriangle(n);
-        for (String str :
-                strList) {
-            System.out.print(str);
-        }
-    }
-
     private List<String> buildInverseIsoscelesTriangle(int n) {
         List<String> strList = new ArrayList<>();
         String item = "";
@@ -49,30 +71,5 @@ public class Diamond {
             strList.add(item);
         }
         return strList;
-    }
-
-
-    public void drawDiamond(int n) {
-        List<String> strList = buildIsoscelesTriangle(n);
-        for (String str :
-                strList) {
-            System.out.print(str);
-        }
-        List<String> strList2 = buildInverseIsoscelesTriangle(n);
-        for (int i = 1; i < strList2.size(); i++) {
-            System.out.print(strList2.get(i));
-        }
-    }
-
-    public void drawDiamondWithName(int n, String name) {
-        List<String> strList = buildIsoscelesTriangle(n);
-        for (int i = 0; i < strList.size() - 1; i++) {
-            System.out.print(strList.get(i));
-        }
-        System.out.println(name);
-        List<String> strList2 = buildInverseIsoscelesTriangle(n);
-        for (int i = 1; i < strList2.size(); i++) {
-            System.out.print(strList2.get(i));
-        }
     }
 }

@@ -13,11 +13,12 @@ import static org.junit.Assert.assertThat;
  */
 public class DiamondTest {
 
-    private Diamond diamond = new Diamond();
+    private Diamond diamond;
     private final ByteArrayOutputStream consoleLog = new ByteArrayOutputStream();
 
     @Before
     public void setUp() throws Exception {
+        diamond = new Diamond();
         System.setOut(new PrintStream(consoleLog));
     }
 

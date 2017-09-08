@@ -12,12 +12,14 @@ import static org.junit.Assert.assertThat;
  * Created by rzhou on 06/09/2017.
  */
 public class FizzBuzzTest {
-    private FizzBuzz fizzBuzz = new FizzBuzz();
+    private FizzBuzz fizzBuzz;
     private final ByteArrayOutputStream consoleLog = new ByteArrayOutputStream();
 
     @Before
     public void setUp() throws Exception {
+        fizzBuzz = new FizzBuzz();
         System.setOut(new PrintStream(consoleLog));
+        consoleLog.reset();
     }
 
     @After
@@ -27,22 +29,21 @@ public class FizzBuzzTest {
 
     @Test
     public void fizz_buzz_game() throws Exception {
-        consoleLog.reset();
         fizzBuzz.game(15);
-        assertThat(consoleLog.toString(), is("1\n" +
-                "2\n" +
-                "Fizz\n" +
-                "4\n" +
-                "Buzz\n" +
-                "Fizz\n" +
-                "7\n" +
-                "8\n" +
-                "Fizz\n" +
-                "Buzz\n" +
-                "11\n" +
-                "Fizz\n" +
-                "13\n" +
-                "14\n" +
-                "FizzBuzz\n"));
+        assertThat(consoleLog.toString(), is("1\n"
+                + "2\n"
+                + "Fizz\n"
+                + "4\n"
+                + "Buzz\n"
+                + "Fizz\n"
+                + "7\n"
+                + "8\n"
+                + "Fizz\n"
+                + "Buzz\n"
+                + "11\n"
+                + "Fizz\n"
+                + "13\n"
+                + "14\n"
+                + "FizzBuzz\n"));
     }
 }

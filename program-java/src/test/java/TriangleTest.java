@@ -15,13 +15,14 @@ import static org.junit.Assert.assertThat;
  */
 public class TriangleTest {
 
-    //given
-    private Triangle triangle = new Triangle();
+    private Triangle triangle;
     private final ByteArrayOutputStream consoleLog = new ByteArrayOutputStream();
 
     @Before
     public void setUp() throws Exception {
+        triangle = new Triangle();
         System.setOut(new PrintStream(consoleLog));
+        consoleLog.reset();
     }
 
     @After
@@ -31,23 +32,20 @@ public class TriangleTest {
 
     @Test
     public void should_print_one_asterisk() throws Exception {
-        //when
-        consoleLog.reset();
+
         triangle.printAsterisk();
-        //then
         assertThat(consoleLog.toString(), is("*\n"));
     }
 
     @Test
     public void should_draw_horizontal_line_with_asterisk() throws Exception {
-        consoleLog.reset();
+
         triangle.drawHorizontalLine(8);
         assertThat(consoleLog.toString(), is("********\n"));
     }
 
     @Test
     public void should_draw_vertical_line_with_asterisk() throws Exception {
-        consoleLog.reset();
         triangle.drawVerticalLine(3);
         assertThat(consoleLog.toString(), is("*\n*\n*\n"));
     }

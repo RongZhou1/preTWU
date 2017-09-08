@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FizzBuzzTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-09-08T12:31:47" hostname="CNrzhou.local" time="0.001">
-  <properties/>
-  <testcase name="fizz_buzz_game" classname="FizzBuzzTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
